@@ -18,15 +18,32 @@
     }
     ```
     
+  * **`GET` /api/courses/:id**
+ 
   * **`DELETE` /api/courses/:id**
   
   * **`GET` /api/courses/:id/students**
   
-  * **`GET` /api/courses/:id/students/best**
-  
-  * **`PATCH` /api/courses/:id/students**
+  * **`POST` /api/courses/:id/students**
     ```Javascript
     body: {
-      students: [...ids]
+      id: 1234
+    }
+    ```
+    
+  * **`DELETE` /api/courses/:id/students/:studentId**
+  
+  * **`GET` /api/courses/:id/students/best**
+
+### Clientes
+  * **`GET` /api/clients/:id**
+  
+  * **`POST` /api/clients**
+    ```Javascript
+    body: {
+      firstName: "John",
+      lastName: "Doe",
+      dni: "12345678",
+      address: "221B Baker St."
     }
     ```
