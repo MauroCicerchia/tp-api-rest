@@ -26,4 +26,4 @@ class ClientController {
   }
 }
 
-module.exports = new ClientController();
+export default new ClientController();

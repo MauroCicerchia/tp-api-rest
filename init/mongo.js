@@ -1,8 +1,8 @@
 import config from "../config";
 import mongoose from "mongoose";
 import Promise from "bluebird";
-const { mongo } = config;
 mongoose.Promise = Promise;
+const { mongo } = config;
 
 export default () =>
   mongoose

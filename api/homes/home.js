@@ -7,6 +7,10 @@ class Home {
     this.modelName = modelName;
   }
 
+  get() {
+    return this.model.find();
+  }
+
   getOneById(_id) {
     return this.model.findOne({ _id });
   }
@@ -17,9 +21,17 @@ class Home {
     );
   }
 
+  remove(_id) {
+    return this.model.deleteOne({ _id });
+  }
+
   getNextVal() {
     return sequences
-      .findOne({ _id: this.modelName })
+      .findOneAndUpdate(
+        { _id: this.modelName },
+        { $inc: { value: 1 } },
+        { upsert: true }
+      )
       .then(({ value }) => value);
   }
 }
