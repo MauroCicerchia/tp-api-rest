@@ -27,7 +27,8 @@
   * **`POST` /api/courses/:id/students**
     ```Javascript
     body: {
-      id: 1234
+      id: 1234,
+      grade: 8
     }
     ```
     
