@@ -1,8 +1,9 @@
-const expressInit = require("./init/express");
-const mongoInit = require("./init/mongo");
-const { port } = require("./config");
-const express = require("express");
+import expressInit from "./init/express";
+import mongoInit from "./init/mongo";
+import config from "./config";
+import express from "express";
 const app = express();
+const { port } = config;
 
 expressInit(app);
 mongoInit().then(() =>

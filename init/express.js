@@ -1,11 +1,12 @@
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
+import bodyParser from "body-parser";
+import morgan from "morgan";
+import apiRouter from "../api/routes";
 
-module.exports = app => {
+export default app => {
   app.use(morgan("dev"));
   app.use(bodyParser.json());
 
-  app.use("/api", require("../api/routes"));
+  app.use("/api", apiRouter);
 
   app.use("*", (req, res) =>
     res

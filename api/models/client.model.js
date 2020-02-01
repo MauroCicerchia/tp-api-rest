@@ -1,13 +1,12 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 
 const Client = new Schema({
-  _id: ObjectId,
+  _id: Number,
   firstName: String,
   lastName: String,
   DNI: String,
   address: String
 });
 
-module.exports = Client;
+export default mongoose.model("Client", Client);

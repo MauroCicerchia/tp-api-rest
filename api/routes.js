@@ -1,7 +1,9 @@
-const express = require("express");
+import express from "express";
+import clientRouter from "./clients";
+import coursesRouter from "./courses";
 const router = express.Router();
 
-router.use("/courses", require("./courses"));
-router.use("/clients", require("./clients"));
+router.use("/courses", coursesRouter);
+router.use("/clients", clientRouter);
 
-module.exports = router;
+export default router;

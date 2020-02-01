@@ -1,9 +1,10 @@
-const { mongo } = require("../config");
-const mongoose = require("mongoose");
-const Promise = require("bluebird");
+import config from "../config";
+import mongoose from "mongoose";
+import Promise from "bluebird";
+const { mongo } = config;
 mongoose.Promise = Promise;
 
-module.exports = () =>
+export default () =>
   mongoose
     .connect(mongo.uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
